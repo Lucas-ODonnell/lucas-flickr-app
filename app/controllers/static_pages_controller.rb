@@ -10,7 +10,8 @@ class StaticPagesController < ApplicationController
       @images = flickr.photos.getRecent
       end
     rescue Flickr::FailedResponse => e
-      puts "Authentication failed : #{e.msg}"
+      flash[:alert] = "#{e.class}: #{e.message}. User ID doesn't exist"
+      redirect_to root_path
     end
   end
 end

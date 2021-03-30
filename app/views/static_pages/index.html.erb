@@ -1,11 +1,22 @@
 <% if params[:user_id].nil? %>
-      <%= render 'form' %>
+  <%= render 'form' %>
 <% else %>
+  <% if params[:user_id] %>
     <% @images.each do |photo| %>
       <img src=<%=Flickr.url_n(photo)%>>
     <% end %>
     <br />
     <%= link_to "Choose a new user", root_path, class: "button is-info" %>
+  <% else %>
+    <div>
+    <h1> Most Recent Photos on Flickr </h1>
+    <% @images_default.each do |photo| %>
+      <img src=<%=Flickr.url_n(photo)%>>
+    <% end %>
+    <br />
+    <%= link_to "Choose a new user", root_path, class: "button is-info" %>
+    </div>
+  <% end %>
 <% end %>
 
 
