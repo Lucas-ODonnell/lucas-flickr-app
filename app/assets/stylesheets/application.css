@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+.button.is-info {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}

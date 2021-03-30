@@ -1,0 +1,4 @@
+<%= form_with(url:'/', method: :get, local: true) do |f| %>
+  <%= f.text_field :user_id, placeholder: "Enter a flickr USER ID" %>
+  <%= submit_tag 'Show photos' %>
+<% end %>
